@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.worker-farm.worker-farm">
+            function <span class="apidocSignatureSpan"></span>worker-farm
+            <span class="apidocSignatureSpan">(options, path, methods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.worker-farm.end">
             function <span class="apidocSignatureSpan">worker-farm.</span>end
             <span class="apidocSignatureSpan">(api, callback)</span>
@@ -225,6 +234,33 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.worker-farm" id="apidoc.module.worker-farm">module worker-farm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.worker-farm.worker-farm" id="apidoc.element.worker-farm.worker-farm">
+        function <span class="apidocSignatureSpan"></span>worker-farm
+        <span class="apidocSignatureSpan">(options, path, methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function farm(options, path, methods) {
+  if (typeof options == &#x27;string&#x27;) {
+    methods = path
+    path = options
+    options = {}
+  }
+
+  var f   = new Farm(options, path)
+    , api = f.setup(methods)
+
+  farms.push({ farm: f, api: api })
+
+  // return the public API
+  return api
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
